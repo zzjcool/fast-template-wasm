@@ -15,9 +15,7 @@ func renderf(this js.Value, args []js.Value) any {
 }
 func main() {
 	c := make(chan struct{}, 0)
-
-	println("WASM Go Initialized")
 	// register functions
-	js.Global().Set("renderf", js.FuncOf(renderf))
+	js.Global().Set("render", js.FuncOf(renderf))
 	<-c
 }
